@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "react-native";
 
-import Luca from "../../assets/imgs/luca.png";
-import Soul from "../../assets/imgs/soul.jpg";
-import ToyStory from "../../assets/imgs/toyStory.jpeg";
-import Carros from "../../assets/imgs/carros.jpg"
-import Coco from "../../assets/imgs/coco.png"
-import MonstrosSa from "../../assets/imgs/monstrosSa.jpg"
-import Up from "../../assets/imgs/up.jpg"
-import Wall from "../../assets/imgs/wall.png"
-import LogoWhite from "../../assets/imgs/Logo2.png"
-
+import Luca from "../../assets/imgs/filmes1/luca.png";
+import Soul from "../../assets/imgs/filmes1/soul.jpg";
+import ToyStory from "../../assets/imgs/filmes1/toyStory.jpeg";
+import Carros from "../../assets/imgs/filmes1/carros.jpg"
+import Coco from "../../assets/imgs/filmes1/coco.png"
+import MonstrosSa from "../../assets/imgs/filmes1/monstrosSa.jpg"
+import Up from "../../assets/imgs/filmes1/up.jpg"
+import Wall from "../../assets/imgs/filmes1/wall.png"
+import LogoWhite from "../../assets/imgs/logos/Logo2.png"
 
 const HomeScreen = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);

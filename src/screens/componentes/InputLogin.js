@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
-// import { CheckBox } from 'react-native';
-// import Button from '@mui/material/Button';
+import Checkbox from 'expo-checkbox';
+import AsyncStorage from "@react-native-community/async-storage";
 
 export default function InputLogin({ navigation }) {
     const [isEmailFocused, setIsEmailFocused] = useState(false);
     const [isSenhaFocused, setIsSenhaFocused] = useState(false);
     const [isEmailValue, setEmailValue] = useState('');
     const [isSenhaValue, setSenhaValue] = useState('');
+    const [isChecked, setChecked] = useState(false);
 
     const handleEmailFocus = () => {
         setIsEmailFocused(true);
@@ -44,9 +45,7 @@ export default function InputLogin({ navigation }) {
         const novosErros = validarCampos();
 
         if (Object.keys(novosErros).length === 0) {
-            const mudarPagina = () => { navigation.navigate('Home') }
-            mudarPagina()
-            alert('Seja bem vindo!');
+            navigation.navigate('Screen2')
         } else {
             setErros(novosErros);
         }
@@ -86,14 +85,40 @@ export default function InputLogin({ navigation }) {
                     </View>
                 </View>
             </View>
+            <View style={styles.containerCheckbox}>
+                <View style={styles.littleContainerCheckbox}>
+                    <Checkbox style={styles.checkbox} value={isChecked} onValueChange={setChecked} />
+                    <Text style={styles.textCheckbox}>Manter login</Text>
+                </View>
+            </View>
             <View style={styles.containerBtn}>
                 <TouchableOpacity onPress={handleLogin} style={styles.Button}><Text style={styles.TextBtn}>Entrar</Text></TouchableOpacity>
             </View>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
+    littleContainerCheckbox: {
+        width: '40%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: '',
+        height: 40
+
+    },
+    textCheckbox: {
+        paddingLeft: 5,
+        fontSize: 17,
+        color: '#fff'
+    },
+    containerCheckbox: {
+        width: '100%',
+        height: 40,
+        top: 30,
+    },
+    checkbox: {
+        marginLeft: 40
+    },
     containerInput: {
         display: 'flex',
         alignItems: 'center',
@@ -139,7 +164,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#000",
+        backgroundColor: "#000220",
         width: 165,
         height: 60,
 
