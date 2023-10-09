@@ -1,16 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import InputLogin from "./componentes/InputLogin";
+import Logo from '../../assets/imgs/Logo2.png';
 
 const Screen1 = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.littleContainer}>
-        <Text style={styles.Login}>Login</Text>
+    <>
+      <View style={styles.container}>
+        <Image source={Logo} style={styles.logo} />
+        <InputLogin />
       </View>
-      {/* <View style={styles.linha}></View> */}
-      <InputLogin />
-    </View>
+    </>
   );
 };
 
@@ -22,23 +22,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
   },
-//   linha: {
-//     top: 0,
-//     width: "100%",
-//     height: 2,
-//     backgroundColor: "#fff",
-//   },
   Login: {
     color: "#fff",
-    fontSize: 60,
+    fontSize: 30,
     textAlign: "center",
-    top: 34,
   },
   littleContainer: {
     display: "flex",
     width: "100%",
     height: 140,
     justifyContent: "center",
+  },
+  logo: {
+    width: 300,
+    height: 150,
+    alignSelf: 'center',
+    marginTop: 20
   },
 });
 

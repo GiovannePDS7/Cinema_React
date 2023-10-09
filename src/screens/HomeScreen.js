@@ -25,8 +25,8 @@ const HomeScreen = () => {
 
   return (
     <ScrollView style={styles.container}>
+      <Image source={LogoWhite} style={styles.logo} />
       <TouchableOpacity onPress={() => toggleDescription("Luca")}>
-        <Image source={LogoWhite} style={styles.logo} />
         <Image source={Luca} style={styles.image} />
         {selectedMovie === "Luca" && (
           <Text style={styles.description}>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000220',
   },
   logo: {
-    width: 150,
+    width: 250,
     height: 150,
     alignSelf: 'center',
   },
