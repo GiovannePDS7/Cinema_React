@@ -5,7 +5,7 @@ import Logo from '../../assets/imgs/logos/Logo2.png';
 import Usuario1 from '../../assets/imgs/usuarios/usuario1.png'
 import Usuario2 from '../../assets/imgs/usuarios/usuario2.png'
 
-const Screen2 = () => {
+const Screen2 = ({navigation}) => {
     return (
         <View style={styles.grandContainer}>
             <Image source={Logo} style={styles.logo} />

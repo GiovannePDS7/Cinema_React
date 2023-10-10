@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import InputLogin from "./componentes/InputLogin";
 import Logo from '../../assets/imgs/logos/Logo2.png';
 
-const Screen1 = () => {
+const Screen1 = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>

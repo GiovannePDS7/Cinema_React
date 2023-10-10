@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-nativ
 import Checkbox from 'expo-checkbox';
 import AsyncStorage from "@react-native-community/async-storage";
 
-export default function InputLogin({ navigation }) {
+const InputLogin = ({ navigation }) =>{
     const [isEmailFocused, setIsEmailFocused] = useState(false);
     const [isSenhaFocused, setIsSenhaFocused] = useState(false);
     const [isEmailValue, setEmailValue] = useState('');
@@ -97,6 +97,7 @@ export default function InputLogin({ navigation }) {
         </View>
     );
 }
+export default InputLogin;
 const styles = StyleSheet.create({
     littleContainerCheckbox: {
         width: '40%',

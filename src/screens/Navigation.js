@@ -1,32 +1,25 @@
 import react from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createStackNavigator } from "@react-navigation/stack";
 
-import HomeScreen from "./HomeScreen";
-import HomeScreen2 from "./HomeScreen2";
-import Screen1 from "./Screen1";
-import Screen2 from "./Screen2";
+import Inicial from './src/screens/Inicial'
+import HomeScreen from "./src/screens/HomeScreen";
+import HomeScreen2 from "./src/screens/HomeScreen2";
+import Screen1 from "./src/screens/Screen1";
+import Screen2 from "./src/screens/Screen2";
 
 const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
 
-const MenuDrawer = () => {
-    return (
-        <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name="Home" component={HomeScreen} />
-            <Drawer.Screen name="screen2" component={Screen2} />
-            
-        </Drawer.Navigator>
-    );
-}
 const Navigation = () => {
     return (
-        <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="Menu" component={MenuDrawer} />
-                <Stack.Screen name="Screen1" component={Screen1} />
-            </Stack.Navigator>
+        <NavigationContainer independent={true}>
+            <Drawer.Navigator initialRouteName="Inicial">
+                <Drawer.Screen name="Inicial" component={Inicial} />
+                <Drawer.Screen name="Screen1" component={Screen1} />
+                <Drawer.Screen name="Screen2" component={Screen2} />
+                <Drawer.Screen name="HomeScreen1" component={HomeScreen1} />
+                <Drawer.Screen name="HomeScreen2" component={HomeScreen2} />
+            </Drawer.Navigator>
         </NavigationContainer>
     )
 }

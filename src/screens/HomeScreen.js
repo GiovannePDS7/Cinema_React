@@ -11,7 +11,7 @@ import Up from "../../assets/imgs/filmes1/up.jpg"
 import Wall from "../../assets/imgs/filmes1/wall.png"
 import LogoWhite from "../../assets/imgs/logos/Logo2.png"
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const toggleDescription = (movie) => {

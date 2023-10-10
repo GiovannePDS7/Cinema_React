@@ -11,7 +11,7 @@ import PrincesaSapo from "../../assets/imgs/filmes2/princesaSapo.jpg"
 import Valente from "../../assets/imgs/filmes2/Valente.jpg"
 import LogoWhite from "../../assets/imgs/logos/Logo2.png"
 
-const HomeScreen2 = () => {
+const HomeScreen2 = ({navigation}) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const toggleDescription = (movie) => {
