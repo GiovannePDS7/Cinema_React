@@ -4,8 +4,9 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Logo from '../../assets/imgs/logos/Logo2.png';
 import Usuario1 from '../../assets/imgs/usuarios/usuario1.png'
 import Usuario2 from '../../assets/imgs/usuarios/usuario2.png'
+import AsyncStorage from "@react-native-community/async-storage";
 
-const Screen2 = ({navigation}) => {
+const Screen2 = ({ navigation }) => {
     return (
         <View style={styles.grandContainer}>
             <Image source={Logo} style={styles.logo} />
@@ -13,25 +14,35 @@ const Screen2 = ({navigation}) => {
                 <Text style={styles.txtQuemEstaAssistindo}>Quem esta assistindo?</Text>
                 <View style={styles.containerBotoes}>
                     <View style={styles.botaoContainer}>
-                        <TouchableOpacity style={styles.botao} onPress={()=> {navigation.navigate('HomeScreen2')}}>
+                        <TouchableOpacity style={styles.botao} onPress={() => { navigation.navigate('HomeScreen2') }}>
                             <Image source={Usuario1} style={styles.imgUsuario} />
                         </TouchableOpacity>
                         <Text style={styles.txtBotao}>Usuario 1</Text>
                     </View>
                     <View style={styles.botaoContainer}>
-                        <TouchableOpacity style={styles.botao2} onPress={()=> {navigation.navigate('HomeScreen')}}>
+                        <TouchableOpacity style={styles.botao2} onPress={() => { navigation.navigate('HomeScreen') }}>
                             <Image source={Usuario2} style={styles.imgUsuario2} />
                         </TouchableOpacity>
                         <Text style={styles.txtBotao}>Usuario 2</Text>
                     </View>
+                </View>
+                <View style={styles.container}>
+                    <TouchableOpacity onPress={() => { AsyncStorage.clear(); navigation.navigate('Screen1')}} style={styles.button}>
+                        <Text style={styles.txtButton}>Mudar conta</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
             <Image source={Logo} style={styles.logo2} />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    button: {
+        height: 20,
+        width: 30,
+        backgroundColor: "#fff"
+    },
     grandContainer: {
         backgroundColor: '#000220'
     },
@@ -41,7 +52,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 20
     },
-    littleContainer:{
+    littleContainer: {
         width: '100%',
         height: 546,
     },
@@ -68,7 +79,7 @@ const styles = StyleSheet.create({
         width: 120,
         height: 110,
         backgroundColor: '#fff',
-        display:'flex',
+        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 6
@@ -84,13 +95,13 @@ const styles = StyleSheet.create({
         height: 120,
         alignSelf: 'center',
     },
-    imgUsuario:{
+    imgUsuario: {
         width: '90%',
         height: 107,
         justifyContent: 'center',
         alignItems: 'center',
     },
-    imgUsuario2:{
+    imgUsuario2: {
         width: '110%',
         height: 120,
         alignSelf: 'center',
